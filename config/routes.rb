@@ -2,6 +2,7 @@ Busimanager::Application.routes.draw do
   resources :users
   resources :sessions, only: [:new, :create, :destroy]
   root  'static_pages#home'
+  match '/welcome',    to: 'static_pages#welcome',    via: 'get'
   match '/signup',  to: 'users#new',            via: 'get'
   match '/signin',  to: 'sessions#new',         via: 'get'
   match '/signout', to: 'sessions#destroy',     via: 'delete'
