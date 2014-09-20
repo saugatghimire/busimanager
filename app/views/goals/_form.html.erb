@@ -1,0 +1,31 @@
+<%= form_for(@goal) do |f| %>
+  <% if @goal.errors.any? %>
+    <div class="alert alert-danger">
+      The form contains <%= pluralize(@goal.errors.count, "error") %>.
+      <ul>
+      <% @goal.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <p>
+    <%= f.label :description %><br />
+    <%= f.text_field :description %>
+  </p>
+  <p>
+    <%= f.label :type %><br />
+    <%= select_tag(:type, options_for_select([['Daily', 1], ['Weekly', 2], ['Monthly', 3]]), class: "goal-select") %>
+  </p>
+  <p>
+    <%= f.label :goal %><br />
+    <%= f.text_field :goal %>
+  </p>
+  <p>
+    <%= f.label :achieved %><br />
+    <%= f.text_field :achieved %>
+  </p>
+  <p>
+    <%= f.submit 'Submit', class: "btn btn-large btn-default" %>
+  </p>
+<% end %>

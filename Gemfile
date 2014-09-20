@@ -7,6 +7,7 @@ gem 'bootstrap-sass'
 gem 'sprockets', '2.11.0'
 gem 'faker', '1.1.2'
 gem 'will_paginate'
+gem 'alphabetical_paginate'
 gem 'bootstrap-will_paginate'
 
 group :development, :test do

@@ -1,0 +1,11 @@
+<% provide(:title, 'Goals') %>
+
+<h1>My Goals</h1>
+
+<div id="pagination_table">
+  <ul class="list-unstyled">
+    <%= render @goals %>
+  </ul>
+</div>
+
+<%= link_to "Add New Goal", new_goal_path, class: "btn btn-large btn-default" %>

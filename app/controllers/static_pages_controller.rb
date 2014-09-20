@@ -1,4 +1,6 @@
 class StaticPagesController < ApplicationController
+  before_action :signed_in_user, only: [:home]
+
   def home
   end
 
@@ -11,6 +13,14 @@ class StaticPagesController < ApplicationController
   def about
   end
 
-  def contact
+  def feedback
   end
+
+  private
+
+    def signed_in_user
+      unless signed_in?
+        redirect_to welcome_path
+      end
+    end
 end

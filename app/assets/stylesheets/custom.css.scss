@@ -6,7 +6,7 @@ $grey: #ECF0F1;
 
 $font-family-sans-serif: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
 
-$navbar-default-bg: #3498DB;
+$navbar-default-bg: $blue-light;
 $body-bg: $grey;
 
 $navbar-default-link-color: $grey;
@@ -15,7 +15,6 @@ $navbar-default-link-hover-color: $navy;
 $btn-default-border: $blue-dark;
 $btn-default-bg: $blue-light;
 $btn-default-color: $grey;
-
 
 $navbar-height: 65px;
 $panel-footer-padding: 2px;
@@ -58,7 +57,14 @@ body {
   margin-top: -20px; /* negative value of footer height */
   height: 30px;
   clear:both;
-  // padding-top:20px;
+  
+  ul {
+    list-style: none;
+    li {
+      display: inline;
+      margin-left: 10px;
+    }
+  }
 } 
 
 .center {
@@ -151,6 +157,24 @@ form {
   }
 }
 
+#contact-info {
+
+  div {
+    padding: 5px;
+  }
+
+  .contact-button {
+    margin-top: 20px;
+  }
+}
+
+.capitalize {
+  text-transform: capitalize;
+}
+
+.goal-select {
+  height: 30px;
+}
 
 // /* universal */
 

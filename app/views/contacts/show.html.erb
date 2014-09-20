@@ -1,0 +1,33 @@
+<% provide(:title, 'Contacts') %>
+
+<div id="contact-info">
+
+  <%= link_to "Back to Contacts", contacts_path %>
+
+  <h1 class="capitalize"><%= @contact.name%></h1>
+
+  <div class="row">
+  <div class="col-md-4">
+    <div>Email: <%= @contact.email %></div>
+    <div>Phone: <%= number_to_phone(@contact.phone, area_code: true) %></div>
+
+    <%= link_to "Edit", edit_contact_path, class: "btn btn-large btn-warning contact-button" %>
+    <%= link_to 'Delete Contact', @contact, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-large btn-danger contact-button" %>
+  </div>
+  <div class="col-md-8">
+    <div><strong>Notes:</strong><br> <%= @contact.notes %></div>
+    <div id="notes-button" class="btn btn-large btn-success contact-button">+ Add Notes</div>
+
+      <div id="notes-form" class="hidden">
+        <%= form_for(@contact) do |f| %>
+          <p>
+            <%= f.text_area :notes %>
+          </p>
+          <p>
+            <%= f.submit 'Submit', class: "btn btn-large btn-default" %>
+          </p>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
